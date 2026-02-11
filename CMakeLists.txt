@@ -12,3 +12,8 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
     CXX_STANDARD 23
 )
 
+add_subdirectory(ext/sfml)
+
+target_link_libraries(${PROJECT_NAME}
+    sfml-network
+)
