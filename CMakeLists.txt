@@ -6,6 +6,12 @@ project(${PROJECT_NAME})
 
 add_executable(${PROJECT_NAME}
     src/main.cpp
+
+    src/tcp/server.hpp
+    src/tcp/server.cpp
+
+    src/tcp/handler.hpp
+    src/tcp/handler.cpp
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
