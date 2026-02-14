@@ -15,10 +15,14 @@ add_executable(${PROJECT_NAME}
 
     src/ssl/ssl.hpp
     src/ssl/ssl.cpp
+
+    src/fs/get.hpp
+    src/fs/get.cpp
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
     CXX_STANDARD 23
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
 )
 
 add_subdirectory(ext/sfml)
@@ -27,4 +31,5 @@ target_link_libraries(${PROJECT_NAME}
     sfml-network
     ssl
     crypto
+    SQLiteCpp
 )
