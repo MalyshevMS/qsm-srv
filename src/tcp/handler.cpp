@@ -4,6 +4,7 @@
 #include <print>
 #include <string>
 #include <algorithm>
+#include <string_view>
 
 void eraseClient(TcpServer *srv, ptr<sf::TcpSocket> sock) {
     std::lock_guard lk(srv->mtx);
@@ -28,8 +29,16 @@ void handleSock(TcpServer *srv, ptr<sf::TcpSocket> sock) {
 
         if (sock->receive(buff, sizeof(buff), recv) != sf::Socket::Status::Done) break;
 
-        std::string packet {buff, recv};
+        std::string_view packet {buff, recv};
         std::println("Info: packet recieved from {} ({} bytes): {}", addr, recv, packet);
+
+        if (packet.starts_with("GET")) {
+
+        }
+        
+        if (packet.starts_with("POST")) {
+            
+        }
     }
 
     eraseClient(srv, sock);

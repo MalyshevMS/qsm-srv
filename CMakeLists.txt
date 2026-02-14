@@ -12,6 +12,9 @@ add_executable(${PROJECT_NAME}
 
     src/tcp/handler.hpp
     src/tcp/handler.cpp
+
+    src/ssl/ssl.hpp
+    src/ssl/ssl.cpp
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
@@ -22,4 +25,6 @@ add_subdirectory(ext/sfml)
 
 target_link_libraries(${PROJECT_NAME}
     sfml-network
+    ssl
+    crypto
 )
