@@ -18,6 +18,8 @@ add_executable(${PROJECT_NAME}
 
     src/fs/get.hpp
     src/fs/get.cpp
+    src/fs/post.hpp
+    src/fs/post.cpp
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES

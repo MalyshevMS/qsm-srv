@@ -68,6 +68,7 @@ std::vector<std::string> split(std::string_view str, char sep = ' ') {
     return result;
 }
 
+// TODO: rewrite
 uint8_t* qsmfs::get(std::string_view username, std::string_view path) {
     auto res = new uint8_t[QSM_1MB];
 
